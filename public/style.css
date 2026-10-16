@@ -1,0 +1,435 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #813f4a;
+}
+
+/* Room */
+
+.room {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #813f4a;
+  cursor: crosshair;
+}
+
+.floor {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 43%;
+  z-index: 1;
+  background-color: #4258f5;
+  background-image:
+    linear-gradient(#171146 3px, transparent 3px),
+    linear-gradient(90deg, #171146 3px, transparent 3px);
+  background-size: 115px 80px;
+}
+
+/* Movable */
+
+.movable {
+  position: absolute;
+  z-index: 4;
+  cursor: pointer;
+  user-select: none;
+  touch-action: none;
+}
+
+.movable.selected {
+  opacity: 0.5;
+}
+
+/* Window */
+
+.window {
+  width: 150px;
+  height: 110px;
+  background-color: #72e4ff;
+}
+
+.window::before,
+.window::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  background-color: #ff4ed8;
+}
+
+.window::before {
+  top: 47%;
+  left: 0;
+  width: 100%;
+  height: 11px;
+}
+
+.window::after {
+  top: 0;
+  left: 47%;
+  width: 11px;
+  height: 100%;
+}
+
+.window-sun {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #efff4f;
+}
+
+/* Pictures */
+
+.picture {
+  width: 105px;
+  height: 95px;
+  background-color: #ff3b21;
+}
+
+.picture-two {
+  background-color: #efff4f;
+}
+
+.picture-heart {
+  position: absolute;
+  top: 27px;
+  left: 35px;
+  width: 38px;
+  height: 38px;
+  background-color: #efff4f;
+  transform: rotate(45deg);
+}
+
+.picture-heart::before,
+.picture-heart::after {
+  content: "";
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #efff4f;
+}
+
+.picture-heart::before {
+  left: -19px;
+}
+
+.picture-heart::after {
+  top: -19px;
+}
+
+.picture-flower {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  width: 65px;
+  height: 65px;
+}
+
+.petal,
+.flower-center {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.petal {
+  background-color: #ff4ed8;
+}
+
+.petal-one {
+  top: 0;
+  left: 18px;
+}
+
+.petal-two {
+  top: 18px;
+  right: 0;
+}
+
+.petal-three {
+  bottom: 0;
+  left: 18px;
+}
+
+.petal-four {
+  top: 18px;
+  left: 0;
+}
+
+.flower-center {
+  top: 18px;
+  left: 18px;
+  background-color: #4258f5;
+}
+
+/* Rug */
+
+.rug {
+  width: 420px;
+  height: 210px;
+  transform: rotate(-4deg);
+  pointer-events: auto;
+}
+
+.rug svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.rug path {
+  fill: #ff4ed8;
+  stroke: #ffc4dc;
+  stroke-width: 6;
+  stroke-linejoin: round;
+}
+
+/* Table */
+
+.table {
+  width: 230px;
+  height: 140px;
+}
+
+.table-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 54px;
+  border-radius: 48% 52% 40% 60%;
+  background-color: #ff3b21;
+  transform: rotate(-2deg);
+}
+
+.table-leg {
+  position: absolute;
+  top: 47px;
+  width: 18px;
+  height: 91px;
+  background-color: #ff3b21;
+}
+
+.table-leg-left {
+  left: 27px;
+  transform: rotate(3deg);
+}
+
+.table-leg-right {
+  right: 27px;
+  transform: rotate(-3deg);
+}
+
+/* Lamp */
+
+.lamp {
+  width: 95px;
+  height: 155px;
+}
+
+.lamp-light {
+  position: absolute;
+  top: 0;
+  left: 6px;
+  width: 82px;
+  height: 60px;
+  border-radius: 65% 35% 18% 22%;
+  background-color: #efff4f;
+  transform: rotate(5deg);
+}
+
+.lamp-stick {
+  position: absolute;
+  top: 54px;
+  left: 42px;
+  width: 12px;
+  height: 80px;
+  background-color: #ff4ed8;
+}
+
+.lamp-base {
+  position: absolute;
+  bottom: 0;
+  left: 11px;
+  width: 74px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #ff4ed8;
+}
+
+/* Plant */
+
+.plant {
+  width: 68px;
+  height: 92px;
+}
+
+.plant-leaf {
+  position: absolute;
+  top: 3px;
+  width: 35px;
+  height: 52px;
+  border-radius: 70% 20% 70% 25%;
+  background-color: #51dd73;
+}
+
+.leaf-left {
+  left: 8px;
+  transform: rotate(-28deg);
+}
+
+.leaf-right {
+  right: 7px;
+  transform: scaleX(-1) rotate(-28deg);
+}
+
+.plant-pot {
+  position: absolute;
+  left: 8px;
+  bottom: 0;
+  width: 52px;
+  height: 46px;
+  border-radius: 8px 8px 20px 20px;
+  background-color: #ff8a5b;
+}
+
+/* Chair */
+
+.chair {
+  width: 105px;
+  height: 135px;
+}
+
+.chair-back {
+  position: absolute;
+  top: 0;
+  left: 13px;
+  width: 79px;
+  height: 75px;
+  border-radius: 45% 55% 15% 15%;
+  background-color: #72e4ff;
+  transform: rotate(3deg);
+}
+
+.chair-seat {
+  position: absolute;
+  top: 65px;
+  left: 2px;
+  width: 101px;
+  height: 28px;
+  border-radius: 50% 40% 35% 45%;
+  background-color: #171146;
+}
+
+.chair-leg {
+  position: absolute;
+  top: 90px;
+  width: 14px;
+  height: 44px;
+  background-color: #efff4f;
+}
+
+.chair-leg-left {
+  left: 16px;
+  transform: rotate(5deg);
+}
+
+.chair-leg-right {
+  right: 16px;
+  transform: rotate(-5deg);
+}
+
+.chair-two .chair-back {
+  background-color: #efff4f;
+  transform: rotate(-4deg);
+}
+
+.chair-two .chair-seat {
+  background-color: #ff4ed8;
+}
+
+.chair-two .chair-leg {
+  background-color: #72e4ff;
+}
+
+/* Animals */
+
+.animal {
+  pointer-events: auto;
+}
+
+.cat {
+  width: 165px;
+  height: 100px;
+}
+
+.dog {
+  width: 140px;
+  height: 135px;
+}
+
+.animal svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.cat-shape {
+  fill: #ffc4dc;
+}
+
+.cat-small-paw {
+  fill: #ffc4dc;
+}
+
+.dog-shape {
+  fill: #ffb077;
+}
+
+.animal-eye {
+  fill: #171146;
+}
+
+.animal-nose {
+  fill: #ff4ed8;
+}
+
+.cat-eye {
+  fill: none;
+  stroke: #171146;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+@media (max-width: 900px) {
+  .window {
+    width: 120px;
+    height: 90px;
+  }
+
+  .picture {
+    width: 85px;
+    height: 78px;
+  }
+
+  .animal {
+    transform: scale(0.85);
+    transform-origin: top left;
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+  <div class="room" id="room">
+
+    <!-- Floor -->
+    <div class="floor"></div>
+
+    <!-- Window -->
+    <div class="movable window" data-id="window">
+      <div class="window-sun"></div>
+    </div>
+
+    <!-- Pictures -->
+    <div class="movable picture picture-one" data-id="pictureOne">
+      <div class="picture-heart"></div>
+    </div>
+
+    <div class="movable picture picture-two" data-id="pictureTwo">
+      <div class="picture-flower">
+        <div class="petal petal-one"></div>
+        <div class="petal petal-two"></div>
+        <div class="petal petal-three"></div>
+        <div class="petal petal-four"></div>
+        <div class="flower-center"></div>
+      </div>
+    </div>
+
+    <!-- Rug -->
+    <div class="movable rug" data-id="rug">
+      <svg viewBox="0 0 320 160">
+        <path d="M40 30 C50 12 72 15 82 28 C96 8 120 10 130 27 C146 8 170 8 182 27 C198 10 222 12 232 30 C252 18 274 28 276 46 C298 50 303 72 290 86 C306 103 295 123 276 124 C272 145 247 151 231 138 C217 156 193 153 182 137 C166 157 140 156 128 138 C110 153 87 149 80 133 C57 143 36 132 36 114 C15 108 12 87 27 75 C11 58 21 37 40 30 Z"></path>
+      </svg>
+    </div>
+
+    <!-- Table -->
+    <div class="movable table" data-id="table">
+      <div class="table-top"></div>
+      <div class="table-leg table-leg-left"></div>
+      <div class="table-leg table-leg-right"></div>
+    </div>
+
+    <!-- Lamp -->
+    <div class="movable lamp" data-id="lamp">
+      <div class="lamp-light"></div>
+      <div class="lamp-stick"></div>
+      <div class="lamp-base"></div>
+    </div>
+
+    <!-- Plant -->
+    <div class="movable plant" data-id="plant">
+      <div class="plant-leaf leaf-left"></div>
+      <div class="plant-leaf leaf-right"></div>
+      <div class="plant-pot"></div>
+    </div>
+
+    <!-- Chair -->
+    <div class="movable chair" data-id="chair">
+      <div class="chair-back"></div>
+      <div class="chair-seat"></div>
+      <div class="chair-leg chair-leg-left"></div>
+      <div class="chair-leg chair-leg-right"></div>
+    </div>
+
+    <!-- Chair Two -->
+    <div class="movable chair chair-two" data-id="chairTwo">
+      <div class="chair-back"></div>
+      <div class="chair-seat"></div>
+      <div class="chair-leg chair-leg-left"></div>
+      <div class="chair-leg chair-leg-right"></div>
+    </div>
+
+    <!-- Cat -->
+    <div class="movable animal cat" data-id="cat">
+      <svg viewBox="0 0 220 130">
+        <path class="cat-shape" d="M18 79 C14 52 39 28 77 24 C112 21 139 31 156 48 C154 41 157 34 165 30 L173 22 L181 35 C184 34 187 34 190 35 L198 22 L206 35 C217 42 223 54 221 67 C219 82 205 91 190 91 L211 104 C218 108 217 116 211 120 C204 124 196 119 187 114 L157 103 C140 118 111 125 78 123 C44 121 20 106 18 84 Z"></path>
+        <path class="cat-small-paw" d="M111 103 C122 110 136 118 149 125 C157 129 165 128 169 123 C172 119 168 115 162 112 C148 103 132 97 120 96 C113 96 108 99 111 103 Z"></path>
+        <path class="cat-eye" d="M171 62 Q176 66 181 62"></path>
+        <path class="cat-eye" d="M191 62 Q196 66 201 62"></path>
+      </svg>
+    </div>
+
+    <!-- Dog -->
+    <div class="movable animal dog" data-id="dog">
+      <svg viewBox="0 0 150 140">
+        <path class="dog-shape" d="M36 60 C26 58 22 49 24 40 C26 30 34 25 42 28 C48 23 55 21 62 23 C69 20 78 22 84 27 C93 24 101 30 102 40 C104 50 98 58 90 62 C99 73 103 88 101 104 C114 101 121 93 119 84 C117 77 124 72 130 78 C141 91 132 112 106 119 C102 132 89 137 79 131 C70 139 55 137 48 129 C34 133 24 125 26 112 C27 95 32 78 41 69 C36 67 33 63 36 60 Z"></path>
+        <circle class="animal-eye" cx="52" cy="47" r="4"></circle>
+        <circle class="animal-eye" cx="76" cy="47" r="4"></circle>
+        <circle class="animal-nose" cx="64" cy="59" r="5"></circle>
+      </svg>
+    </div>
+
+  </div>
+
+  <script src="sketch.js"></script>
+
+</body>
+
+</html>
